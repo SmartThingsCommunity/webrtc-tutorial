@@ -1,0 +1,48 @@
+{
+	"name": "My WebRTC Camera",
+	"metadata": {
+		"vid": "03e80c0d-afc5-3c58-a66b-e796e4094946",
+		"mnmn": "SmartThingsCommunity",
+		"ocfDeviceType": "oic.d.camera",
+		"stunServer": "stun.st-av.net"
+	},
+	"components": [
+		{
+			"label": "main",
+			"id": "main",
+			"capabilities": [
+				{
+					"id": "motionSensor",
+					"version": 1,
+					"ephemeral": false
+				},
+				{
+					"id": "button",
+					"version": 1,
+					"ephemeral": false
+				},
+				{
+					"id": "webrtc",
+					"version": 1,
+					"ephemeral": false
+				},
+				{
+					"id": "imageCapture",
+					"version": 1,
+					"ephemeral": false
+				},
+				{
+					"id": "healthCheck",
+					"version": 1,
+					"ephemeral": false
+				}
+			],
+			"categories": [
+				{
+					"name": "Camera",
+					"categoryType": "manufacturer"
+				}
+			]
+		}
+	]
+}

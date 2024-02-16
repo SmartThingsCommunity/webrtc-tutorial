@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./head.ejs') %>
+    <script src="/javascripts/webcam.js"></script>
+</head>
+<body class="dark">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 header">
+            <a href="/logout">Sign Out</a>
+            <% if (invitationId) { %>
+                <a href="https://invitations.smartthings.com/schemaApp/<%= invitationId %>" target="_blank">Install Schema Connector</a>
+            <% } %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>WebRTC Webcam Camera</h3>
+            <% if (errorMessage) { %>
+                <p class="errorMessage"><%= errorMessage %></p>
+            <% } else { %>
+                <div class="videos">
+                  <span>
+                   <video id="webcamVideo" autoplay playsinline></video>
+                  </span>
+                </div>
+                <div class="controls" style="display: none">
+                    <button class="btn btn-primary" id="webcamStartButton">Start webcam</button>
+                    <button class="btn btn-danger" id="webcamStopButton">Stop webcam</button>
+                    <button class="btn btn-primary" id="ringBellButton">Ring Bell</button>
+                    <button class="btn btn-secondary" id="motionInactiveButton">Motion: Inactive</button>
+                    <button class="btn btn-primary" id="motionActiveButton">Motion: Active</button>
+                </div>
+                <canvas id="canvas"></canvas>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
