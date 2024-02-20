@@ -14,7 +14,7 @@ like [ngrok](https://ngrok.com/) to do this, rather than opening ports to you co
 
 Start by cloning the repository below:
 
-	git clone TODO:__repo__
+	git clone https://github.com/SmartThingsCommunity/webrtc-tutorial.git
 
 Next, navigate to the project directory and install dependencies:
 

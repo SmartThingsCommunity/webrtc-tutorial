@@ -96,9 +96,7 @@ module.exports = async (accessToken, callbackAuthentication, callbackUrls) => {
 }
 ```
 
-The `createConnection` method stores the connection information in our SQLite database. (TODO: maybe
-we should include the code in `db.js` for managing connections here as well rather than including it
-in step_1.)
+The `createConnection` method stores the connection information in our SQLite database.
 
 #### State Refresh
 

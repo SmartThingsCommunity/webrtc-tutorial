@@ -34,7 +34,7 @@ router.post('/answer', async function(req, res) {
 	}
 
 	await updateDeviceAnswer(deviceId(), JSON.stringify(answer))
-	console.log('TODO: answer')
+	console.log('answer')
 	res.json({})
 })
 
