@@ -11,6 +11,7 @@ This starter app stores data in a SQLite database in the `.data` directory.
 
 To run the connector, you will need to make it accessible to the Internet. We recommend using a program
 like [ngrok](https://ngrok.com/) to do this, rather than opening ports to you computer in your router setup.
+To use ngrok, you'll need to install it and create an account first.
 
 Start by cloning the repository below:
 
