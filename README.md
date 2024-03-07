@@ -10,6 +10,8 @@ and integrate this video stream with SmartThings for viewing in the SmartThings 
 
 Individual steps in this tutorial can be found in `step_<n>` subdirectories. It is recommended
 that you start with the simple OAuth 2.0 application provided in step 1 and proceed from there.
+Code provided in steps 2 and later is for reference only. (When you finish following the instructions
+in a given step, your code should end up looking like the code in that step.)
 
 # Prerequisites
 
