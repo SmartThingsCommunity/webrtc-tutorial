@@ -41,6 +41,13 @@ CLIENT_SECRET=someotheroftenlongrandomstring
 USERNAME=yourusername
 PASSWORD=yourpassword
 ```
+Type in terminal:
+
+    echo %USERNAME%
+
+If you have `%USERNAME%` output in terminal you can continue tutorial. If you have other output, you should change 
+`USERNAME` to `USERNAME1` in `.env` (some variable that is not your environment variable). In addition, you should
+change file `routes/index.js` in line 21 `process.env.USERNAME` variable to your new variable (`process.env.USERNAME1`)
 
 Start the server:
 

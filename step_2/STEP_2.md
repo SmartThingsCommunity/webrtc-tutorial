@@ -3,8 +3,9 @@
 We need a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for our
 camera devices we'll be creating.
 
-You can use the CLI to create a device profile. First, we need to create a definition for the
-device profile. You can find it under `step_02/deviceprofile.json`.
+You can use the CLI to create a device profile. You must use the CLI version 1.8.1 or higher. You can download it from
+[ST CLI] (https://github.com/SmartThingsCommunity/smartthings-cli/releases/tag/%40smartthings%2Fcli%401.8.1). 
+First, we need to create a definition for the device profile. You can find it under `step_02/deviceprofile.json`.
 
 ```json
 {

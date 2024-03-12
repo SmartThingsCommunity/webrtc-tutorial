@@ -3,6 +3,11 @@
 To complete the connector, we are going to wire up the button to simulate motion and connect
 the camera using webRTC.
 
+First of all you should install dependencies:
+
+    cd webrtc-tutorial/step_final    
+    npm install
+
 ### Motion Simulation
 
 The web app already has a button to simulate motion. Wire this up to notify SmartThings when
@@ -235,5 +240,7 @@ module.exports.init = async (request, response, next) => {
 	})
 }
 ```
+
+You should wait some time until healthCheck is received and device become online. Then you can control all capabilities.
 
 [Previous](../step_4/STEP_4.md)
