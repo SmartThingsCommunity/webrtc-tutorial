@@ -54,7 +54,6 @@ In case you have problems with your ngrok endpoint, and you have to shut down it
 new url address. To fix this problem, you should change `SERVER_URL` in `.env` for new one and then change 
 all `FORWARD_URL` in `schema.json` and update your smartthings schema:
 
-    $ smartthings schema <- returns a list of schemas, copy ID of smartthings schema you want to update
     $ smartthings schema:update [schema_id]
 
 [Previous](../step_2/STEP_2.md)

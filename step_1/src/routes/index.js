@@ -18,7 +18,7 @@ router.get('/login', (req, res) => {
 router.post('/authenticate', (req, res) => {
 	// For this example, we only have one user whose username and password is specified.
 	const { username, password } = req.body
-	if (username === process.env.USERNAME && password === process.env.PASSWORD) {
+	if (username === process.env.APP_USERNAME && password === process.env.APP_PASSWORD) {
 		req.session.username = username
 		res.redirect('/')
 	} else {
