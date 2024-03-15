@@ -236,4 +236,6 @@ module.exports.init = async (request, response, next) => {
 }
 ```
 
+You should wait some time until healthCheck is received and device become online. Then you can control all capabilities.
+
 [Previous](../step_4/STEP_4.md)

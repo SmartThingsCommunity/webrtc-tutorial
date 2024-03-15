@@ -38,8 +38,8 @@ Create a `.env` file with the following variables, substituting your own values 
 SERVER_URL=https://963f3b10c014.ngrok.app
 CLIENT_ID=somerandomstring
 CLIENT_SECRET=someotheroftenlongrandomstring
-USERNAME=yourusername
-PASSWORD=yourpassword
+APP_USERNAME=yourusername
+APP_PASSWORD=yourpassword
 ```
 
 Start the server:

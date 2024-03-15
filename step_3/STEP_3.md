@@ -50,6 +50,11 @@ into the `.env` file.
 ST_CLIENT_ID=faab3a56-be7c-4a6a-9bab-d4133c69464f
 ST_CLIENT_SECRET=9df62b5707...60fa25c752bec989f25e0c1cc816e11fd0991ec
 ```
+In case you have problems with your ngrok endpoint, and you have to shut down it and make a new one, so it will have a 
+new url address. To fix this problem, you should change `SERVER_URL` in `.env` for new one and then change 
+all `FORWARD_URL` in `schema.json` and update your smartthings schema:
+
+    $ smartthings schema:update
 
 [Previous](../step_2/STEP_2.md)
 [Next](../step_4/STEP_4.md)

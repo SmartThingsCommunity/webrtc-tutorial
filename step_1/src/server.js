@@ -15,8 +15,8 @@ if (!process.env.CLIENT_ID || process.env.CLIENT_ID === 'xxx') {
 	console.log('Copy the following into your .env file, and fill in your own values:\n')
 	console.log('CLIENT_ID=xxx')
 	console.log('CLIENT_SECRET=xxx')
-	console.log('USERNAME=something')
-	console.log('PASSWORD=secret')
+	console.log('APP_USERNAME=something')
+	console.log('APP_PASSWORD=secret')
 	// eslint-disable-next-line no-process-exit
 	process.exit()
 }

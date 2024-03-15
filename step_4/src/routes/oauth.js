@@ -12,7 +12,7 @@ router.get('/login', async (req, res) => {
 
 router.post('/authenticate', async (req, res) => {
 	const { username, password, redirect_uri, state } = req.body
-	if (username === process.env.USERNAME && password === process.env.PASSWORD) {
+	if (username === process.env.APP_USERNAME && password === process.env.APP_PASSWORD) {
 		const code = await generateCode()
 		let location = `${redirect_uri}${redirect_uri.includes('?') ? '&' : '?'}code=${code}`
 		if (state) {

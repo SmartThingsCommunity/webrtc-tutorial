@@ -3,8 +3,8 @@
 We need a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for our
 camera devices we'll be creating.
 
-You can use the CLI to create a device profile. First, we need to create a definition for the
-device profile. You can find it under `step_02/deviceprofile.json`.
+You can use the CLI to create a device profile. First, we need to create a definition for the device profile.
+You can find it under `step_02/deviceprofile.json`.
 
 ```json
 {
