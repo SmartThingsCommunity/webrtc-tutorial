@@ -1,13 +1,15 @@
-## Step 3 - Register Your Connector
+# Step 3: Register your Schema integration 
 
-Create a JSON file called `schema.json` with the following contents.
+Next, we need to create a record of our Schema connector and register it with the SmartThings platform.  
 
-Make the following substitutions:
+Begin by creating a JSON file named `schema.json` in your working directory with the contents listed below.
 
-* your email address for `YOUR_EMAIL_HERE`
-* `OAUTH_CLIENT_ID` with your OAuth client id (the `CLIENT_ID` in the `.env` file you created in step 1).
-* `OAUTH_CLIENT_SECRET` with your OAuth client secret (`CLIENT_SECRET` in the `.env` file).
-* replace all instances of `FORWARDING_URL` with your forwarding URL
+> Make the following substitutions:
+>
+> * Your email address for `YOUR_EMAIL_HERE`.
+> * `OAUTH_CLIENT_ID` with your OAuth client ID (the `CLIENT_ID` in the `.env` file you created in step 1).
+> * `OAUTH_CLIENT_SECRET` with your OAuth client secret (`CLIENT_SECRET` in the `.env` file).
+> * replace all instances of `FORWARDING_URL` with the `SERVER_URL` value used in step 1.
 
 ```json
 {
@@ -28,11 +30,11 @@ Make the following substitutions:
 }
 ```
 
-Then, use the CLI to register your schema connector:
+Then, use the CLI to register your Schema integration with the SmartThings platform:
 
 	$ smartthings schema:create -i schema.json
 
-This creates the record and returns a client id and secret for your app. The output of the command
+This returns a client ID and secret for your app. The output of the command
 should look like this:
 
 ```bash
@@ -43,18 +45,20 @@ should look like this:
 }
 ```
 
-Add the values for `CLIENT_ID` and `CLIENT_SECRET` from the output of the previous command
-into the `.env` file.
+Add the values for `stClientId` and `stClientSecret` from the output of the command above
+to your `.env` file:
 
 ```
 ST_CLIENT_ID=faab3a56-be7c-4a6a-9bab-d4133c69464f
 ST_CLIENT_SECRET=9df62b5707...60fa25c752bec989f25e0c1cc816e11fd0991ec
 ```
-In case you have problems with your ngrok endpoint, and you have to shut down it and make a new one, so it will have a 
-new url address. To fix this problem, you should change `SERVER_URL` in `.env` for new one and then change 
-all `FORWARD_URL` in `schema.json` and update your smartthings schema:
+
+>**NOTE** 
+>If you restart your ngrok endpoint or make a new one, you will be given a new URL address. This will break your existing Schema integration. 
+>To resolve this, replace the `SERVER_URL` in your `.env` file with the new URL given when you restarted ngrok. 
+>Change all `FORWARD_URL` instances in your `schema.json` file and update your Schema integration using the CLI:
 
     $ smartthings schema:update
 
-[Previous](../step_2/STEP_2.md)
-[Next](../step_4/STEP_4.md)
+After creating a record of your Schema integration and registering it with the SmartThings platform, 
+you are ready to create your Schema connector in [step 4](../step_4/STEP_4.md).

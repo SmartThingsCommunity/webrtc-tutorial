@@ -1,32 +1,29 @@
 # Overview
 
-:warning: DRAFT This tutorial is a rough first draft.
+This tutorial will demonstrate how to add a webcam to your SmartThings account through the use of a SmartThings Schema integration. 
+The integration creates a single camera device that can be used to view the webcam's video stream
+from within the SmartThings app.
 
-This tutorial will walk you through creating a SmartThings Schema which adds a web camera as a
-device to your SmartThings account.
+This tutorial is divided into five unique steps. Complete instructions for each step can be found in each `step_<n>` subdirectory. It is recommended
+that you start with the simple OAuth 2.0 application provided in `step 1`. 
 
-The application creates a single camera device that can be used to view the webcam's video stream
-and integrate this video stream with SmartThings for viewing in the SmartThings app.
-
-Individual steps in this tutorial can be found in `step_<n>` subdirectories. It is recommended
-that you start with the simple OAuth 2.0 application provided in step 1 and proceed from there.
-Code provided in steps 2 and later is for reference only. (When you finish following the instructions
-in a given step, your code should end up looking like the code in that step.)
+> **⚠️ IMPORTANT ⚠️**: Code provided in steps 2 and later in each `sample_files` directory is for *reference only* and is not intended to be a pre-configured standalone solution. Each step builds on the previous step's sample files - when you finish following instructions for a given step, the code in your working directory should resemble the code examples and files provided in each step's `sample_files` directory.
 
 # Prerequisites
 
-1. A [Samsung developer account](https://developer.smartthings.com/)
-2. The [SmartThings CLI](https://github.com/SmartThingsCommunity/smartthings-cli/tree/main/packages/cli) installed and configured for your developer account
-3. A webcam connected to your computer
-4. NodeJS version 20.
+1. A [Samsung account](https://developer.smartthings.com/).
+1. The [SmartThings CLI](https://github.com/SmartThingsCommunity/smartthings-cli/tree/main/packages/cli) installed and configured for your Samsung account. If you have not yet configured the CLI for use with your Samsung account, you will be prompted to do so when running the CLI for the first time. 
+1. A computer running MacOS, Windows, or Linux (this tutorial uses MacOS 14.2.1).
+1. A webcam connected to your computer.
+1. NodeJS version 20.
 
 # Tutorial
 
-* [Step 1 - A Simple OAuth 2.0 App](step_1/STEP_1.md)
-* [Step 2 - Create a Device Profile](step_2/STEP_2.md)
-* [Step 3 - Register Your Connector](step_3/STEP_3.md)
-* [Step 4 - Initial Schema Setup and Ring Button](step_4/STEP_4.md)
-* [Final Step - Full Connector](step_final/STEP_FINAL.md)
+* [Step 1 - Create an OAuth app](step_1/STEP_1.md)
+* [Step 2 - Create a device profile](step_2/STEP_2.md)
+* [Step 3 - Register your Schema integration](step_3/STEP_3.md)
+* [Step 4 - Create your Schema connector and finish setup](step_4/STEP_4.md)
+* [Step 5 - Connect your camera with WebRTC](step_5/STEP_5.md)
 
 # References
 

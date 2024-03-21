@@ -1,38 +1,45 @@
-# Step 1 - A Simple OAuth 2.0 App
+# Step 1: Create an OAuth 2.0 app
 
-Your cloud must support OAuth 2.0 (including authorization code flow) so the first step is to have
-an OAuth 2 application. For this tutorial, we are providing a simple Oauth 2.0 application in Step 1
-which will stand in for your application. This is the starting point for this tutorial. Details of
-how it works are beyond the scope of this tutorial.
+We begin by creating an OAuth 2.0 application. For this tutorial, a simple Oauth 2.0 application is provided in the `Step 1` directory.
+This app will stand in for your OAuth 2.0 application.
 
-This starter app stores data in a SQLite database in the `.data` directory.
+> This sample app stores data in a SQLite database in the `.data` directory.
 
-## Get it Running
+---
+**NOTE**
 
 To run the connector, you will need to make it accessible to the Internet. We recommend using a program
 like [ngrok](https://ngrok.com/) to do this, rather than opening ports to you computer in your router setup.
-To use ngrok, you'll need to install it and create an account first.
+To use ngrok, you'll need to install it and create an account before following the steps listed below.
+
+---
+
+## Get it running
 
 Start by cloning the repository below:
 
 	git clone https://github.com/SmartThingsCommunity/webrtc-tutorial.git
 
+Copy the contents of `oauth_app` into your working directory (in this case, `my_schema_integration`):
+
+	cp -pr oauth_app my_schema_integration
+
 Next, navigate to the project directory and install dependencies:
 
-	cd webrtc-tutorial/step_1
+	cd my_schema_integration/oauth_app
 	npm install
 
-Start ngrok (or your preferred tunneling service) forwarding to port 3000 (the default port for the server).
-If you are using ngrok, note the forwarding URL for use in the next step. (It will be an `https` URL.)
+Start ngrok (or your preferred tunneling service) forwarding to `port 3000` (the default port for the server).
+If you are using ngrok, note the forwarding URL for use as the `SERVER_URL` in the next step (it will be an `https` URL).
 
 	# example using ngrok
 	$ ngrok http 3000
 
-Make up your own client id and secret to use in the example below. An online UUID-generator is a
-good place to get values to use in this example. Make up a username and password for the single
+Make up your own `CLIENT_ID` and `CLIENT_SECRET` to use in the example below (an online UUID-generator is a
+good place to get values). Additionally, create a username and password for the single
 sample user of this example app.
 
-Create a `.env` file with the following variables, substituting your own values for each of them:
+Create a `.env` file in your working directory with the following variables, substituting your own values for each of them:
 
 ```
 SERVER_URL=https://963f3b10c014.ngrok.app
@@ -42,15 +49,15 @@ APP_USERNAME=yourusername
 APP_PASSWORD=yourpassword
 ```
 
-Start the server:
+Start your app:
 
 	npm start
 
-## Kick the Tires (Test It Out)
+## Test your app
 
 Open the forwarding URL in your browser (we tested with Chrome) and sign in using the username
 and password you specified in the `.env` file. There is no connection to SmartThings yet but
 you can start the camera, simulate a doorbell ring, and simulate motion. You should see log
 messages in the console when you take these actions.
 
-[Next](../step_2/STEP_2.md)
+Once you have verified that your app is properly running, you are ready to move to [step 2](../step_2/STEP_2.md).
