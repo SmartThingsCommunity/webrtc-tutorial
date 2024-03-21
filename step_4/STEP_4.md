@@ -1,4 +1,4 @@
-# Step 4: Create your Schema Connector and finish setup
+# Step 4: Create your Schema connector and finish setup
 
 ## Install dependencies
 
@@ -6,7 +6,7 @@ Get started by navigating to your working directory and adding the `st-schema` n
 
 	$ npm install st-schema
 
-## Create your Schema Connector
+## Create your Schema connector
 
 Next, we need to create an instance of `SchemaConnector`. Create a new file named `connector.js`
 in `src/lib` with the following code:
@@ -61,7 +61,7 @@ Create and register handlers with the Schema connector to handle important event
 
 Create a handler for discovery. This will get called when our application is installed.
 
-Make a `handlers` directory in your `src/lib` directory and create a file called `discovery.js` with the following contents:
+Make a `handlers` directory beneath your `src/lib` directory and create a file called `discovery.js` with the following contents:
 
 ```js
 const { deviceId, deviceProfile } = require('../utils')
@@ -232,8 +232,8 @@ After making these updates, terminate any running instance of your OAuth app and
 
 ## Install your Schema integration to your SmartThings account 
 
-In order to install your new Schema integration to your SmartThings account, 
-create an [invitation](https://developer.smartthings.com/docs/devices/cloud-connected/st-schema-invites). 
+Create an [invitation](https://developer.smartthings.com/docs/devices/cloud-connected/st-schema-invites) 
+to install your new Schema integration to your SmartThings account. 
 Creating an invitation for your Schema integration allows you to install it to your SmartThings account
 without publishing it to the SmartThings catalog. To create an invitation, run the following command:
 

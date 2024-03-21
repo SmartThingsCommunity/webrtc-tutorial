@@ -1,7 +1,7 @@
 # Step 5: Connect your camera with WebRTC
 
 To complete our integration, we configure the button to simulate motion, 
-and then connect the camera using WebRTC.
+and connect the camera using WebRTC.
 
 ## Motion Simulation
 
@@ -153,7 +153,7 @@ const connector = new SchemaConnector()
 
 ### Event Stream
 
-Uncomment code that sets up the event stream in `startWebCam` in `public/javascripts/webcam.js`.
+Uncomment code that sets up the event stream in `startWebCam` in your `public/javascripts/webcam.js` file.
 
 ```js
 	const eventSource = new EventSource('/stream')
@@ -236,5 +236,5 @@ module.exports.init = async (request, response, next) => {
 }
 ```
 
-Wait some time until `healthCheck` is received and the device become online. At this time, you can control all capabilities of the device 
-and your Schema integration is complete. 
+Wait some time until `healthCheck` is received and the device become online. At this time, you can control all capabilities of the device. 
+Your Schema integration is now complete!
