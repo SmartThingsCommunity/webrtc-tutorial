@@ -4,10 +4,10 @@ This tutorial will demonstrate how to add a webcam to your SmartThings account t
 The integration creates a single camera device that can be used to view the webcam's video stream
 from within the SmartThings app.
 
-This tutorial is divided into five unique steps. Complete instructions for each step can be found in each `step_<n>` subdirectory. It is recommended
-that you start with the simple OAuth 2.0 application provided in `step 1`. 
+This tutorial is divided into five unique steps. Instructions for each step can be found in each `step_<n>` subdirectory. It is recommended
+that you start with the simple OAuth 2.0 application provided in step 1. 
 
-> **⚠️ IMPORTANT ⚠️**: Code provided in steps 2 and later in each `sample_files` directory is for *reference only* and is not intended to be a pre-configured standalone solution. Each step builds on the previous step's sample files - when you finish following instructions for a given step, the code in your working directory should resemble the code examples and files provided in each step's `sample_files` directory.
+> **⚠️ IMPORTANT**: Code provided in steps 2 and later in each `sample_files` directory is for *reference only* and is not intended to be a pre-configured standalone solution. Each step builds on the previous step's sample files - when you finish following instructions for a given step, the code in your working directory should resemble the code examples and files provided in each step's `sample_files` directory.
 
 # Prerequisites
 

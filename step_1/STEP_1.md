@@ -5,16 +5,13 @@ This app will stand in for your OAuth 2.0 application.
 
 > This sample app stores data in a SQLite database in the `.data` directory.
 
----
-**NOTE**
 
-To run the connector, you will need to make it accessible to the Internet. We recommend using a program
+**NOTE**: To run the connector, you will need to make it accessible to the Internet. We recommend using a program
 like [ngrok](https://ngrok.com/) to do this, rather than opening ports to you computer in your router setup.
 To use ngrok, you'll need to install it and create an account before following the steps listed below.
 
----
 
-## Get it running
+## Get started
 
 Start by cloning the repository below:
 
@@ -24,18 +21,18 @@ Copy the contents of `oauth_app` into your working directory (in this case, `my_
 
 	cp -pr oauth_app my_schema_integration
 
-Next, navigate to the project directory and install dependencies:
+Next, navigate to your working directory and install dependencies:
 
 	cd my_schema_integration/oauth_app
 	npm install
 
 Start ngrok (or your preferred tunneling service) forwarding to `port 3000` (the default port for the server).
-If you are using ngrok, note the forwarding URL for use as the `SERVER_URL` in the next step (it will be an `https` URL).
+If you are using ngrok, note the forwarding URL for use as the `SERVER_URL` in the next step (it will be provided an `https` URL).
 
 	# example using ngrok
 	$ ngrok http 3000
 
-Make up your own `CLIENT_ID` and `CLIENT_SECRET` to use in the example below (an online UUID-generator is a
+Generate your own `CLIENT_ID` and `CLIENT_SECRET` to use in the example below (an online UUID-generator is a
 good place to get values). Additionally, create a username and password for the single
 sample user of this example app.
 
