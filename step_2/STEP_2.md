@@ -1,10 +1,13 @@
-## Step 2 - Create a Device Profile
+# Step 2: Create a device profile
 
-We need a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for our
-camera devices we'll be creating.
+Devices on the SmartThings platform use [device profiles](https://developer.smartthings.com/docs/devices/device-profiles/) to define device features and functionality on the platform. 
 
-You can use the CLI to create a device profile. First, we need to create a definition for the device profile.
-You can find it under `step_02/deviceprofile.json`.
+You will need to create a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for your camera device before joining it with the SmartThings platform. In this step, we will use the CLI and a predefined device definition to create a device profile. 
+
+## Create your device definition and device profile 
+
+First, we need to create a definition for the device profile.
+You can find a predefined definition in `step_02/sample_files/deviceprofile.json`:
 
 ```json
 {
@@ -57,13 +60,14 @@ You can find it under `step_02/deviceprofile.json`.
 }
 ```
 
-Use the CLI to create the device profile using this JSON.
+Use the CLI to create a new device profile using the provided JSON:
 
-	$ cd step_2
+	$ cd step_2/sample_files
 	$ smartthings deviceprofiles:create -i deviceprofile.json
 
-When you run this command, a device profile is created. Note the id of this device
-profile for the next step.
+Record the `id` of your device profile for use in the next step.
+
+> **NOTE**: The `id` provided below is for illustrative purposes only. You will receive a unique `id` after creating your device profile. 
 
 ```json
 {
@@ -73,18 +77,17 @@ profile for the next step.
 }
 ```
 
-Add the given device profile to your `.env` file:
+## Add the device profile to your `.env` file:
 
 ```
 DEVICE_PROFILE=a86c7dbb-4cc3-47b8-894b-d0715490d82a
 ```
 
-Create an exported variable in `utils.js` with the device profile id. Replace the text
-`DEVICE_PROFILE_ID_HERE` with the device profile id from the previous step.
+Create an exported variable in `utils.js` with the device profile ID. Replace the text
+`DEVICE_PROFILE_ID_HERE` with the device profile ID from the previous step.
 
 ```js
 module.exports.deviceProfile = () => process.env.DEVICE_PROFILE
 ```
 
-[Previous](../step_1/STEP_1.md)
-[Next](../step_3/STEP_3.md)
+After creating your device profile and adding it to your `.env` file, you are ready to move to [step 3](../step_3/STEP_3.md)

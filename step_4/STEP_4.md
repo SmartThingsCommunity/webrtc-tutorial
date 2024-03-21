@@ -1,16 +1,14 @@
-## Step 4 - Initial Schema Setup and Ring Button
+# Step 4: Create your Schema Connector and finish setup
 
-Let's start out by implementing the simple "Ring" button.
+## Install dependencies
 
-### Install `st-schema` dependency.
-
-Add the `st-schema` npm package as a dependency.
+Get started by navigating to your working directory and adding the `st-schema` npm package as a dependency:
 
 	$ npm install st-schema
 
-### Create Schema Connector
+## Create your Schema Connector
 
-Create an instance of `SchemaConnector`. Create a new file called `connector.js`
+Next, we need to create an instance of `SchemaConnector`. Create a new file named `connector.js`
 in `src/lib` with the following code:
 
 ```js
@@ -24,9 +22,9 @@ const connector = new SchemaConnector()
 module.exports = connector
 ```
 
-### Set Up Routing
+## Set Up routing
 
-Create a new file named `schema.js` in `src/routes` to handle requests from SmartThings using this
+Create a new file named `schema.js` in `src/routes`. This will handle requests from SmartThings using your
 new connector.
 
 ```js
@@ -45,7 +43,7 @@ router.post('/', async function (req, res) {
 module.exports = router
 ```
 
-Now, add the route to `app.js`
+Now, add the route to your `app.js` file:
 
 ```js
 const schemaRouter = require('./routes/schema')
@@ -55,16 +53,15 @@ const schemaRouter = require('./routes/schema')
 app.use('/schema', schemaRouter)
 ```
 
-### Handlers
+## Handlers
 
-Create and register handlers with the Schema Connector to handle important events from SmartThings.
+Create and register handlers with the Schema connector to handle important events from SmartThings.
 
-#### Discovery
+### Discovery
 
-Create a handler for discovery. This will get called when our application is installed. (We can
-proactively add devices as well but we won't do that yet.)
+Create a handler for discovery. This will get called when our application is installed.
 
-Make a `handlers` directory in `src/lib` and create a file called `discovery.js` in it.
+Make a `handlers` directory in your `src/lib` directory and create a file called `discovery.js` with the following contents:
 
 ```js
 const { deviceId, deviceProfile } = require('../utils')
@@ -78,13 +75,13 @@ module.exports = async (accessToken, response) => {
 }
 ```
 
-#### Callback Access
+### Callback Access
 
-Create a handler for storing connection information. This will allow us to make APIs to SmartThings
-when things happen locally. For example, if the camera detects motion or someone rings the doorbell,
+Create a handler for storing connection information. This will allow us to make API calls to SmartThings
+when things happen locally; if the camera detects motion or the doorbell rings,
 we can notify SmartThings.
 
-Add a new file to the `src/lib/handlers` directory called `callback-access.js` with the following
+Add a new file to your `src/lib/handlers` directory called `callback-access.js` with the following
 contents:
 
 ```js
@@ -96,12 +93,12 @@ module.exports = async (accessToken, callbackAuthentication, callbackUrls) => {
 }
 ```
 
-The `createConnection` method stores the connection information in our SQLite database.
+> The `createConnection` method stores the connection information in our SQLite database.
 
-#### State Refresh
+### State Refresh
 
 Sometimes, SmartThings will need to query your connector for the current state of devices.
-To do that, we'll register a state handler which will respond with the current state. Create a
+To accomplish this, register a state handler that will respond with the current state. Create a
 file called `state-refresh.js` in `src/lib/handlers` with the following contents:
 
 ```js
@@ -119,11 +116,11 @@ module.exports = async (accessToken, response, { devices }) => {
 }
 ```
 
-#### Integration Deleted
+### Integration Deleted
 
-When an integration is deleted from a users account, the connector will be notified via an
-"integration deletion handler". Create a file called `integration-deleted.js` which will clean
-up connection information in our local database for the user.
+When an integration is deleted from a user's account, the connector is notified via an
+"integration deletion handler". Create a file called `integration-deleted.js` to clean
+up connection information in our local database for the user:
 
 ```js
 const { deleteConnection } = require('../db')
@@ -133,9 +130,9 @@ module.exports = async (accessToken) => {
 }
 ```
 
-#### Register the Handlers
+### Register the Handlers
 
-Update `src/lib/connector.js` to register these new handlers with out connector:
+Update `src/lib/connector.js` to register these new handlers with your connector:
 
 ```js
 const { SchemaConnector } = require('st-schema')
@@ -156,11 +153,12 @@ const connector = new SchemaConnector()
 module.exports = connector
 ```
 
-### Proactive Communication with SmartThings
+## Proactive Communication with SmartThings
 
-We need to update SmartThings when someone rings the doorbell. First, create a file called
-`callbacks.js` in `src/lib` which will have a utility method making it easy to man an API call
-to SmartThings.
+When an event occurs on your device (such as a doorbell ringing), we need to update SmartThings. 
+To accomplish this, first create a file called
+`callbacks.js` in `src/lib` which will have a utility method making it easy to make an API call
+to SmartThings:
 
 ```js
 const { StateUpdateRequest } = require('st-schema')
@@ -228,16 +226,20 @@ router.post('/ring', async function(req, res) {
 })
 ```
 
-After making these updates, restart the connector.
+After making these updates, terminate any running instance of your OAuth app and restart: 
 
-### Create an invitation for your connector using the CLI
+	$ npm start
 
-Creating an invitation for your connector allows you to install it in your SmartThings account
-without it being in the device catalog. To create an invitation, run the following command:
+## Install your Schema integration to your SmartThings account 
+
+In order to install your new Schema integration to your SmartThings account, 
+create an [invitation](https://developer.smartthings.com/docs/devices/cloud-connected/st-schema-invites). 
+Creating an invitation for your Schema integration allows you to install it to your SmartThings account
+without publishing it to the SmartThings catalog. To create an invitation, run the following command:
 
 	$ smartthings invites:schema:create
 
-Select your connector from the list that appears in the CLI and follow the prompts to create the invitation.
+Select your connector from the list that appears in the CLI and follow the prompts to create an invitation.
 After creating your invitation, the CLI will provide you with an ID and URL for your invitation:
 
 ```json
@@ -247,12 +249,12 @@ After creating your invitation, the CLI will provide you with an ID and URL for 
 }
 ```
 
-Paste the `invitationUrl` into a browser window and follow the prompts to install your connector.
+Paste the `invitationUrl` into a browser window and follow the prompts to install your integration.
 
-Open the SmartThings app "Devices" tab and find the webcam device created by your Schema connector
-(named "Webcam Camera"). The device will be offline until the next step but since we've implemented
-the ring button, when you press "Ring Bell" in the browser, you should see a "Button pressed" event
-appear in the details card for the device in the app.
+Open the SmartThings app "Devices" tab and find the webcam device (named "Webcam Camera") created by 
+your Schema integration. The device will be offline until the next step, but since we have implemented
+the ring button, when you press "Ring Bell" in your browser, you should see a "Button pressed" event
+appear in the details card for the device in the SmartThings app.
 
-[Previous](../step_3/STEP_3.md)
-[Next](../step_final/STEP_FINAL.md)
+After installing your Schema integration to your SmartThings account, 
+you are ready to proceed to [step 5](../step_5/STEP_5.md).
