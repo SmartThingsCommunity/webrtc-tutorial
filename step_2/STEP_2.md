@@ -2,7 +2,7 @@
 
 Devices on the SmartThings platform use [device profiles](https://developer.smartthings.com/docs/devices/device-profiles/) to define device features and functionality on the platform. 
 
-You will need to create a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for your camera device before joining it with the SmartThings platform. In this step, we will use the CLI and a predefined device definition to create a device profile. 
+You will need to create a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for your camera device before joining it with the SmartThings platform. In this step, we use the CLI and a predefined device definition to create a device profile. 
 
 ## Create your device definition and device profile 
 
@@ -77,13 +77,13 @@ Record the `id` of your device profile for use in the next step.
 }
 ```
 
-## Add the device profile to your `.env` file:
+## Add your device profile to your `.env` file:
 
 ```
 DEVICE_PROFILE=a86c7dbb-4cc3-47b8-894b-d0715490d82a
 ```
 
-Create an exported variable in `utils.js` with the device profile ID. Replace the text
+Create an exported variable in your working directory `src/lib/utils.js` file with the device profile ID. Replace the text
 `DEVICE_PROFILE_ID_HERE` with the device profile ID from the previous step.
 
 ```js

@@ -1,6 +1,6 @@
 # Step 3: Register your Schema integration 
 
-Next, we need to create a record of our Schema connector and register it with the SmartThings platform.  
+Next, we need to create a record of our Schema integration and register it with the SmartThings platform.  
 
 Begin by creating a JSON file named `schema.json` in your working directory with the contents listed below.
 
@@ -53,7 +53,7 @@ ST_CLIENT_ID=faab3a56-be7c-4a6a-9bab-d4133c69464f
 ST_CLIENT_SECRET=9df62b5707...60fa25c752bec989f25e0c1cc816e11fd0991ec
 ```
 
->**NOTE** 
+>**⚠️ IMPORTANT** 
 >If you restart your ngrok endpoint or make a new one, you will be given a new URL address. This will break your existing Schema integration. 
 >To resolve this, replace the `SERVER_URL` in your `.env` file with the new URL given when you restarted ngrok. 
 >Change all `FORWARD_URL` instances in your `schema.json` file and update your Schema integration using the CLI:
