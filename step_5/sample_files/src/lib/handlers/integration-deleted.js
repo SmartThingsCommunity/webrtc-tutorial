@@ -5,7 +5,6 @@ const { deleteConnection } = require('../db')
  * tokens and other data when that happend.
  * @accessToken External cloud access token
  */
-
 module.exports = async (accessToken) => {
 	await deleteConnection(accessToken)
 }

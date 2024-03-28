@@ -1,4 +1,4 @@
-# Step 4: Create your Schema connector and finish setup
+# Step 4: Implement a ring button
 
 ## Install dependencies
 
@@ -61,7 +61,7 @@ Create and register handlers with the Schema connector to handle important event
 
 Create a handler for discovery. This will get called when our application is installed.
 
-Make a `handlers` directory beneath your `src/lib` directory and create a file called `discovery.js` with the following contents:
+Make a `handlers` directory in your `src/lib` directory and create a file called `discovery.js` with the following contents:
 
 ```js
 const { deviceId, deviceProfile } = require('../utils')
@@ -155,7 +155,7 @@ module.exports = connector
 
 ## Proactive Communication with SmartThings
 
-When an event occurs on your device (such as a doorbell ringing), we need to update SmartThings. 
+When an event occurs on your device, we need to update SmartThings. 
 To accomplish this, first create a file called
 `callbacks.js` in `src/lib` which will have a utility method making it easy to make an API call
 to SmartThings:

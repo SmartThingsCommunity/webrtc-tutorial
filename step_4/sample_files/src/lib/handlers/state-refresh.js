@@ -7,7 +7,6 @@ const { getDevice } = require('../db')
  * @accessToken External cloud access token
  * @response {StateRefreshResponse} StateRefresh response object
  */
-
 module.exports = async (accessToken, response, { devices }) => {
 	for (const device of devices) {
 		const data = await getDevice(device.externalDeviceId)

@@ -2,12 +2,12 @@
 
 Devices on the SmartThings platform use [device profiles](https://developer.smartthings.com/docs/devices/device-profiles/) to define device features and functionality on the platform. 
 
-You will need to create a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for your camera device before joining it with the SmartThings platform. In this step, we use the CLI and a predefined device definition to create a device profile. 
+You will need to create a [device profile](https://developer.smartthings.com/docs/devices/device-profiles/) for your camera device before joining it with the SmartThings platform. In this step, we use the CLI to create a device profile. 
 
-## Create your device definition and device profile 
+## Create your device profile 
 
-First, we need to create a definition for the device profile.
-You can find a predefined definition in `step_02/sample_files/deviceprofile.json`:
+First, we need to create a JSON definition for the device profile.
+You can find a predefined device profile definition in `step_02/sample_files/deviceprofile.json`:
 
 ```json
 {
