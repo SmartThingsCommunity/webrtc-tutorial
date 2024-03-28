@@ -7,7 +7,6 @@ const { updateDeviceAnswer } = require('../db')
  * @response {CommandResponse} CommandResponse response object
  * @devices {array} List of ST device commands
  */
-
 module.exports = async (accessToken, response, devices) => {
 	for (const device of devices) {
 		for (const command of device.commands) {

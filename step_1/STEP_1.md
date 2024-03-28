@@ -1,6 +1,6 @@
-# Step 1: Create an OAuth 2.0 app
+# Step 1: Get started with a pre-existing OAuth app
 
-We begin by creating an OAuth 2.0 application. For this tutorial, a simple Oauth 2.0 application is provided in the `Step 1` directory.
+We begin by starting with an OAuth 2.0 application. For this tutorial, a simple Oauth 2.0 application is provided in the `Step 1` directory.
 This app will stand in for your OAuth 2.0 application.
 
 > This sample app stores data in a SQLite database in the `.data` directory.
@@ -17,17 +17,17 @@ Start by cloning the repository below:
 
 	git clone https://github.com/SmartThingsCommunity/webrtc-tutorial.git
 
-Copy the contents of `oauth_app` into your working directory (in this case, `my_schema_integration`):
+Copy the contents of `oauth_app` into a new directory to begin development (in this case, `~/dev`):
 
-	cp -pr oauth_app my_schema_integration
+	cp -pr oauth_app ~/dev/my_schema_integration
 
-Next, navigate to your working directory and install dependencies:
+Next, navigate to your development directory and install dependencies:
 
-	cd my_schema_integration/oauth_app
+	cd ~/dev/my_schema_integration
 	npm install
 
 Start ngrok (or your preferred tunneling service) forwarding to `port 3000` (the default port for the server).
-If you are using ngrok, note the forwarding URL for use as the `SERVER_URL` in the next step (it will be provided an `https` URL).
+If you are using ngrok, note the forwarding URL for use as the `SERVER_URL` in the next step (it will be an `https` URL).
 
 	# example using ngrok
 	$ ngrok http 3000

@@ -7,7 +7,6 @@ const { createConnection } = require('../db')
  * @callbackAuthentication ST access and refresh tokens for proactive state callbacks
  * @callbackUrls Callback and refresh token URLs
  */
-
 module.exports = async (accessToken, callbackAuthentication, callbackUrls) => {
 	console.log('CALLBACK ACCESS HANDLER')
 	await createConnection(accessToken, callbackAuthentication, callbackUrls)

@@ -1,7 +1,7 @@
-# Step 5: Connect your camera with WebRTC
+# Step 5: Add your camera
 
 To complete our integration, we configure the button to simulate motion, 
-and connect the camera using WebRTC.
+and implement camera functionality using WebRTC.
 
 ## Motion Simulation
 
@@ -236,5 +236,6 @@ module.exports.init = async (request, response, next) => {
 }
 ```
 
-Wait some time until `healthCheck` is received and the device become online. At this time, you can control all capabilities of the device. 
+After enabling your camera in your OAuth app web UI (the forwarding URL from [step 1](step_1.md)), 
+your webcam feed will appear live in the SmartThings app. All capabilities of the device are functional at this point. 
 Your Schema integration is now complete!
