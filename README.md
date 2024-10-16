@@ -10,7 +10,7 @@ This tutorial is divided into five unique steps. Instructions for each step can 
 
 # Prerequisites
 
-1. Basic familiarity with NodeJS and TypeScript 
+1. Basic familiarity with NodeJS and JavaScript 
 1. A [Samsung account](https://developer.smartthings.com/).
 1. The [SmartThings CLI](https://github.com/SmartThingsCommunity/smartthings-cli/tree/main/packages/cli) installed and configured for your Samsung account. If you have not yet configured the CLI for use with your Samsung account, you will be prompted to do so when running the CLI for the first time. 
 1. A computer running MacOS, Windows, or Linux.
